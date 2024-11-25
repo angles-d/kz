@@ -1,0 +1,57 @@
+[
+    {
+      "name": "Garlic and lemons",
+      "address": "133 Harvard Avenue Allston, MA 02134",
+      "phone": "(617)-783-8100",
+      "website": "https://www.garliclemons.com/",
+      "menu": "https://www.garliclemons.com/menu",
+      "cuisine": "mediterranian",
+      "method": "third party",
+      "online_ordering": "https://www.garliclemons.com/order",
+      "image_url": "https://static.wixstatic.com/media/048274_394791deeb1a4271b0e285f739540e06~mv2.jpg/v1/fill/w_715,h_405,q_90/048274_394791deeb1a4271b0e285f739540e06~mv2.jpg"
+    },
+    {
+      "name": "kimchipapi",
+      "address": "81 harvard avenue, allston ma 02134",
+      "phone": "(617)-208-8005",
+      "website": "https://www.kimchipapi.com/",
+      "menu": "https://www.kimchipapi.com/menu",
+      "cuisine": "korean",
+      "method": "yes",
+      "online_ordering": "https://www.kimchipapi.com/menu",
+      "image_url": "https://static.wixstatic.com/media/8eeea7_8f0e42aae6a946bca1cea32ebbe646e7~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_5184,h_3456,al_c/8eeea7_8f0e42aae6a946bca1cea32ebbe646e7~mv2_d_5184_3456_s_4_2.jpg"
+    },
+    {
+      "name": "Isshindo Ramen",
+      "address": "1 brighton ave allston ma 02134",
+      "phone": "(617)-987-0201",
+      "website": "https://www.isshindoramen.com/",
+      "menu": "",
+      "cuisine": "ramen",
+      "method": "third party",
+      "online_ordering": "https://www.isshindoramen.com/onlineordering",
+      "image_url": "https://static.wixstatic.com/media/b1cbcf_9b75c8b7b9b4473b99ee511b533f4a0a~mv2.jpg/v1/fill/w_1292,h_550,al_c,q_85,enc_avif,quality_auto/b1cbcf_9b75c8b7b9b4473b99ee511b533f4a0a~mv2.jpg"
+    },
+    {
+      "name": "Red White",
+      "address": "294 Newbury Street, Boston, MA 02115",
+      "phone": "(857)-277-0609",
+      "website": "https://www.redwhiteusa.com/",
+      "menu": "https://www.redwhiteusa.com/s/order?location=11ed1e2db06566bdb384ac1f6bbba82c",
+      "cuisine": "ramen",
+      "method": "yes",
+      "online_ordering": "https://www.redwhiteusa.com/s/order?location=11ed1e2db06566bdb384ac1f6bbba82c",
+      "image_url": "https://736bb176b2fc7193383d.cdn6.editmysite.com/uploads/b/736bb176b2fc7193383d29acabaf545f17b2668a3ce8263db94af8a3ac4df685/IMG_4671_1711155093.JPG?width=2400&optimize=medium"
+    },
+    {
+      "name": "japonaise",
+      "address": "",
+      "phone": "",
+      "website": "",
+      "menu": "",
+      "cuisine": "",
+      "method": "",
+      "online_ordering": "",
+      "image_url": ""
+    }
+   ]
