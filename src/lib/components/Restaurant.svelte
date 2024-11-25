@@ -21,12 +21,12 @@
 		class="px-4 object-cover h-36 w-full"
 	/>
 
-	<div>
-		<Button href={restaurant.website} variant="link">Website</Button>
-		<Button class="py-0" href={restaurant.online_ordering} variant="link">Order Online</Button>
-		<Button class="py-0" href={restaurant.menu} variant="link">Menu</Button>
+	<div class="py-1">
+		<a href={restaurant.website} class="hover:underline text-sm px-4">Website</a>
+		<a href={restaurant.online_ordering} class="hover:underline text-sm px-4">Order Online</a>
+		<a href={restaurant.menu} class="hover:underline text-sm px-4">Menu</a>
 	</div>
-	<a href="tel:{restaurant.phone}" class="hover:underline text-xs px-4 capitalize pr-0"
+	<a href="tel:{restaurant.phone}" class="hover:underline text-sm px-4 capitalize pr-0"
 		>{restaurant.phone}</a
 	>
 </div>
