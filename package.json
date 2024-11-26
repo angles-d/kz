@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
   },
   "devDependencies": {
     "@internationalized/date": "^3.6.0",
+    "@melt-ui/svelte": "^0.86.2",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@tsconfig/svelte": "^5.0.4",
     "autoprefixer": "^10.4.20",
@@ -35,7 +36,8 @@
     "zod": "^3.23.8"
   },
   "dependencies": {
-    "@melt-ui/svelte": "^0.86.2",
-    "lucide-svelte": "^0.460.1"
+    "leaflet": "^1.9.4",
+    "lucide-svelte": "^0.460.1",
+    "svelte-maplibre": "^1.0.0-next.3"
   }
 }
