@@ -75,4 +75,13 @@
   body {
     @apply bg-background text-foreground;
   }
+  @font-face {
+    font-family: 'Sniglet';
+    src:
+      url('assets/fonts/Sniglet-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
 }
+

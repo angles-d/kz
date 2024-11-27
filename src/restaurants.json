@@ -2,7 +2,7 @@
   {
     "name": "Garlic and lemons",
     "address": "133 Harvard Avenue Allston, MA 02134",
-    "phone": "(617)-783-8100",
+    "phone": "(617) 783-8100",
     "website": "https://www.garliclemons.com/",
     "menu": "https://www.garliclemons.com/menu",
     "cuisine": "mediterranian",
@@ -14,7 +14,7 @@
   {
     "name": "kimchipapi",
     "address": "81 harvard avenue, allston ma 02134",
-    "phone": "(617)-208-8005",
+    "phone": "(617) 208-8005",
     "website": "https://www.kimchipapi.com/",
     "menu": "https://www.kimchipapi.com/menu",
     "cuisine": "korean",
@@ -26,7 +26,7 @@
   {
     "name": "Isshindo Ramen",
     "address": "1 brighton ave allston ma 02134",
-    "phone": "(617)-987-0201",
+    "phone": "(617) 987-0201",
     "website": "https://www.isshindoramen.com/",
     "menu": "",
     "cuisine": "ramen",
@@ -38,7 +38,7 @@
   {
     "name": "Red White Boneless Ramen",
     "address": "294 Newbury Street, Boston, MA 02115",
-    "phone": "(857)-277-0609",
+    "phone": "(857) 277-0609",
     "website": "https://www.redwhiteusa.com/",
     "menu": "https://www.redwhiteusa.com/s/order?location=11ed1e2db06566bdb384ac1f6bbba82c",
     "cuisine": "ramen",
@@ -74,7 +74,7 @@
   {
     "name": "Paris Creperie",
     "address": "278 Harvard St, Brookline, MA",
-    "phone": "617-232-1770",
+    "phone": "(617) 232-1770",
     "website": "https://www.pariscreperie.com/",
     "menu": "https://www.pariscreperie.com/menus",
     "cuisine": "crepes",
@@ -85,8 +85,8 @@
   },
   {
     "name": "Sip of Joy",
-    "address": "661 Tremont Street, Boston, Massachusetts 02118, United States",
-    "phone": "",
+    "address": "661 Tremont Street, Boston, MA 02118",
+    "phone": "(781) 879-9373",
     "website": "https://sipofjoycafe.com/",
     "menu": "https://sipofjoycafe.com/menu",
     "cuisine": "cafe",
@@ -122,7 +122,7 @@
   {
     "name": "boston soup dumplings",
     "address": "113 Brighton Ave,  Boston, MA, 02134",
-    "phone": "617-202-3867",
+    "phone": "(617) 202-3867",
     "website": "https://www.bostonsoupdumplings.com/",
     "menu": "https://www.bostonsoupdumplings.com/menu",
     "cuisine": "chinese",
@@ -134,7 +134,7 @@
   {
     "name": "BAB Korean Bistro",
     "address": "1374 Beacon St, Brookline, MA 02446",
-    "phone": "(617)-383-5575",
+    "phone": "(617) 383-5575",
     "website": "https://babkoreanbistro.com/",
     "menu": "https://babkoreanbistro.com/brookline-bab-korean-bistro-food-menu",
     "cuisine": "korean",
