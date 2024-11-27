@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Slider from './lib/components/Slider.svelte';
 	import Map from '$lib/components/Map.svelte';
 	import Restaurant from '$lib/components/Restaurant.svelte';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
+	import { ChevronDown } from 'lucide-svelte';
 	import Typewriter from 'svelte-typewriter';
 	import './app.css';
 	import restaurants from './restaurants.json';
-	import Button from '$lib/components/ui/button/button.svelte';
-	import { ChevronDown } from 'lucide-svelte';
 
 	let showIntro = true;
 	let showMap = false;
@@ -21,13 +21,12 @@
 			behavior: 'smooth'
 		});
 	}
+
+	let resFilters = [...restaurants.reduce((acc, r) => acc.add(r.cuisine), new Set())];
 </script>
 
-<!-- https://scrollrevealjs.org/ -->
-<!-- https://github.com/mattboldt/typed.js -->
-<!-- https://mojs.github.io/tutorials/burst/#burst-2 -->
 <main class="bg-teal-50 {showIntro ? 'overflow-hidden' : ''} ">
-	<div class=" min-h-dvh">
+	<div class="h-screen">
 		<Typewriter
 			mode={'cascade'}
 			interval={50}
@@ -37,15 +36,16 @@
 			}}
 		>
 			<div class="absolute top-1/3 mx-8">
-				<h1 class=" capitalize py-1 text-3xl font-semibold">Hello Kexin Zhang!</h1>
+				<h1 class=" capitalize py-4 text-3xl font-semibold">Hello Kexin Zhang!</h1>
 				<p>I made this bc I didn't want support ubereats lol</p>
+				<p class="whitespace-break-spaces">{' '}</p>
+				<p>Hope you like the restaurants!</p>
 			</div>
 		</Typewriter>
-		<Button
-			variant="ghost"
+		<button
 			class="duration-1000 transition-transform {showButton
 				? '-translate-y-32'
-				: 'translate-y-0'} size-24 absolute left-1/2 -translate-x-1/2 -bottom-24"
+				: 'translate-y-0'}  absolute left-1/2 -translate-x-1/2 -bottom-24"
 			on:click={() => {
 				mainIntoView('resies');
 			}}
@@ -54,7 +54,7 @@
 				<p>To the Restaurants</p>
 				<ChevronDown size={64} strokeWidth={1} color="#111"></ChevronDown>
 			</div>
-		</Button>
+		</button>
 	</div>
 
 	<div
@@ -66,9 +66,9 @@
 				showMap = false;
 			}}
 			type="button"
-			class="font-['Sniglet'] px-6 py-2 text-md font-bold text-gray-900 rounded-s-2xl border border-black {showMap
-				? ' bg-white  text-gray-900'
-				: ' bg-yellow-100 text-gray-900'}"
+			class="font-['Sniglet'] px-16 py-2 text-md font-bold rounded-s-xl border border-black {showMap
+				? ' bg-white  '
+				: ' bg-yellow-100'}"
 		>
 			List
 		</button>
@@ -79,9 +79,9 @@
 				mainIntoView('resies');
 			}}
 			type="button"
-			class=" font-['Sniglet'] font-bold border-b border-t border-r border-black px-6 py-2 text-sm rounded-e-2xl {!showMap
-				? ' bg-white  text-gray-900'
-				: ' bg-yellow-100 text-gray-900'}"
+			class=" font-['Sniglet'] font-bold border-b border-t border-r border-black px-16 py-2 text-sm rounded-e-xl {!showMap
+				? ' bg-white '
+				: ' bg-yellow-100 '}"
 		>
 			Map
 		</button>
@@ -93,7 +93,23 @@
 				<Map></Map>
 			</div>
 		{:else}
-			<div class="pt-20 pb-8">
+			<div class="mx-6 pt-20 pb-8">
+				<div class="my-2">
+					<DropdownMenu.Root>
+						<DropdownMenu.Trigger asChild let:builder>
+							<Button
+								variant="outline"
+								builders={[builder]}
+								class="bg-purple-100 border border-black w-32">Filter</Button
+							>
+						</DropdownMenu.Trigger>
+						<DropdownMenu.Content class="w-32">
+							{#each resFilters as res}
+								<DropdownMenu.Item class="capitalize">{res}</DropdownMenu.Item>
+							{/each}
+						</DropdownMenu.Content>
+					</DropdownMenu.Root>
+				</div>
 				{#each restaurants as restaurant}
 					<Restaurant {restaurant}></Restaurant>
 				{/each}

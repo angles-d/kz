@@ -2,7 +2,7 @@
 	export let restaurant;
 </script>
 
-<div class="mb-4 mx-4 rounded-xl shadow-lg py-4 px-4 bg-white border border-black flex flex-col">
+<div class="mb-4 rounded-xl shadow-lg py-4 px-4 bg-white border border-black flex flex-col">
 	<div class="flex items-center">
 		<a href={restaurant.website} class="text-sm font-bold capitalize pr-0">{restaurant.name}</a>
 		<p class="capitalize text-sm font-['Sniglet']">, {restaurant.cuisine}</p>
