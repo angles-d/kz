@@ -5,7 +5,8 @@ import { defineConfig } from 'vite';
  
 export default defineConfig({
   plugins: [svelte()],
- resolve: {
+  base: '/kz/',
+  resolve: {
   alias: {
    $lib: path.resolve("./src/lib"),
   },
