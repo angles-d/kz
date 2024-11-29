@@ -12,6 +12,8 @@
 	let showMap = false;
 	let showButton = false;
 
+	let filter = 'all';
+
 	function mainIntoView(id) {
 		showIntro = false;
 
@@ -21,31 +23,44 @@
 			behavior: 'smooth'
 		});
 	}
+	$: console.log(filter);
 
-	let resFilters = [...restaurants.reduce((acc, r) => acc.add(r.cuisine), new Set())];
+	let resFilters = ['all', ...restaurants.reduce((acc, r) => acc.add(r.cuisine), new Set())];
 </script>
 
 <main class="bg-teal-50 {showIntro ? 'overflow-hidden' : ''} ">
-	<div class="h-screen">
+	<div class="h-screen overflow-hidden">
 		<Typewriter
 			mode={'cascade'}
-			interval={50}
+			interval={30}
 			delay={100}
 			on:done={() => {
 				showButton = true;
 			}}
 		>
-			<div class="absolute top-1/3 mx-8">
+			<div class="absolute top-[15vh] mx-8">
 				<h1 class=" capitalize py-4 text-3xl font-semibold">Hello Kexin Zhang!</h1>
-				<p>I made this bc I didn't want support ubereats lol</p>
+				<!-- <p class="whitespace-break-spaces">{' '}</p>
+				<p>
+					I was originally going to get you a gift card for food delivery since you need tasty
+					convenient brain fuel for your art doctor dreams, but all the delivery services are
+					actually so bad for restaurants...
+				</p>
 				<p class="whitespace-break-spaces">{' '}</p>
-				<p>Hope you like the restaurants!</p>
+				<p>So I made this bc I didn't want support ubereats lol</p>
+				<p class="whitespace-break-spaces">{' '}</p>
+				<p>
+					Turns out your local restaurants do not have their own delivery, so this is more like a
+					general list of places near you but I tried.
+				</p>
+				<p class="whitespace-break-spaces">{' '}</p>
+				<p>Hope you like the restaurants!</p> -->
 			</div>
 		</Typewriter>
 		<button
 			class="duration-1000 transition-transform {showButton
 				? '-translate-y-32'
-				: 'translate-y-0'}  absolute left-1/2 -translate-x-1/2 -bottom-24"
+				: 'translate-y-0'}  absolute left-1/2 -translate-x-1/2 top-full"
 			on:click={() => {
 				mainIntoView('resies');
 			}}
@@ -66,9 +81,9 @@
 				showMap = false;
 			}}
 			type="button"
-			class="font-['Sniglet'] px-16 py-2 text-md font-bold rounded-s-xl border border-black {showMap
-				? ' bg-white  '
-				: ' bg-yellow-100'}"
+			class="font-['Sniglet'] py-2 text-md font-bold rounded-s-lg border border-black {showMap
+				? ' bg-white w-[30vw]'
+				: ' bg-yellow-100 w-[43vw]'} duration-300"
 		>
 			List
 		</button>
@@ -79,9 +94,9 @@
 				mainIntoView('resies');
 			}}
 			type="button"
-			class=" font-['Sniglet'] font-bold border-b border-t border-r border-black px-16 py-2 text-sm rounded-e-xl {!showMap
-				? ' bg-white '
-				: ' bg-yellow-100 '}"
+			class=" font-['Sniglet'] font-bold border-b border-t border-r border-black px-16 py-2 text-sm rounded-e-lg {!showMap
+				? ' bg-white w-[43vw]'
+				: ' bg-yellow-100 w-[30vw]'} duration-300"
 		>
 			Map
 		</button>
@@ -93,24 +108,30 @@
 				<Map></Map>
 			</div>
 		{:else}
-			<div class="mx-6 pt-20 pb-8">
+			<div class="mx-[7vw] pt-20 pb-8">
 				<div class="my-2">
 					<DropdownMenu.Root>
 						<DropdownMenu.Trigger asChild let:builder>
 							<Button
 								variant="outline"
 								builders={[builder]}
-								class="bg-purple-100 border border-black w-32">Filter</Button
+								class="bg-purple-100 border font-['Sniglet']  border-black w-[33vw] capitalize"
+								>{filter}</Button
 							>
 						</DropdownMenu.Trigger>
-						<DropdownMenu.Content class="w-32">
+						<DropdownMenu.Content class="w-[33vw]">
 							{#each resFilters as res}
-								<DropdownMenu.Item class="capitalize">{res}</DropdownMenu.Item>
+								<DropdownMenu.Item
+									on:click={() => {
+										filter = res;
+									}}
+									class="capitalize font-['Sniglet'] ">{res}</DropdownMenu.Item
+								>
 							{/each}
 						</DropdownMenu.Content>
 					</DropdownMenu.Root>
 				</div>
-				{#each restaurants as restaurant}
+				{#each restaurants.filter((r) => filter == 'all' || r.cuisine == filter) as restaurant}
 					<Restaurant {restaurant}></Restaurant>
 				{/each}
 			</div>
