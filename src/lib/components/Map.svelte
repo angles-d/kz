@@ -4,12 +4,16 @@
 	import { CroissantIcon } from 'lucide-svelte';
 	import { SoupIcon } from 'lucide-svelte';
 	import { HouseIcon } from 'lucide-svelte';
+	import { ShellIcon } from 'lucide-svelte';
+	import 'material-icons/iconfont/outlined.css';
 
 	let center = [-71.10781873212616, 42.346225159981266];
 	let home = [-71.1510406295893, 42.35181833496808];
 	import restaurants from '../../restaurants.json';
 	let selectedRes = restaurants[0];
 	let show = false;
+
+	const sweet = new Set(['sweet', 'bakery', 'cafe']);
 </script>
 
 <div class="overflow-clip h-dvh">
@@ -37,17 +41,23 @@
 					center = [long, lat];
 					selectedRes = res;
 				}}
-				class="grid h-8 w-8 place-items-center rounded-full shadow-2xl border-[1px] border-stone-600
-			{res.cuisine == 'bakery' ? 'bg-pink-100' : 'bg-teal-100'}"
+				class="grid size-9 place-items-center rounded-full shadow-2xl border-[1px] border-stone-600
+			{sweet.has(res.type) ? 'bg-pink-100' : 'bg-teal-100'}"
 			>
-				{#if res.cuisine == 'bakery'}
-					<span>
-						<CroissantIcon strokeWidth={1} color="#000"></CroissantIcon>
-					</span>
+				{#if res.type == 'bakery'}
+					<span class="yummy-icon yi-141 fill-black text-[20px]"></span>
+				{:else if res.type == 'sweet'}
+					<ShellIcon strokeWidth={1} color="#000"></ShellIcon>
+				{:else if res.type == 'noodle'}
+					<span class="yummy-icon yi-181 fill-black text-[24px]"></span>
+				{:else if res.type == 'korean'}
+					<span class="yummy-icon yi-047 fill-black text-[22px]"></span>
+				{:else if res.type == 'dumpling'}
+					<span class="yummy-icon yi-238 fill-black rotate-180 text-[20px]"></span>
+				{:else if res.type == 'cafe'}
+					<span class="yummy-icon yi-006 fill-black text-[22px]"></span>
 				{:else}
-					<span>
-						<SoupIcon strokeWidth={1} color="#000"></SoupIcon>
-					</span>
+					<span class="yummy-icon yi-055 fill-black text-[22px]"></span>
 				{/if}
 			</Marker>
 		{/each}
@@ -55,14 +65,14 @@
 	<div
 		class="w-full absolute text-sm ease-in-out duration-300 border-t border-l border-r border-gray-800 {show
 			? '-translate-y-full'
-			: 'translate-y-0'} {selectedRes.cuisine == 'bakery'
+			: 'translate-y-0'} {sweet.has(selectedRes.type)
 			? 'bg-pink-50'
 			: 'bg-teal-50'} rounded-t-xl z-10 py-4 overflow-clip px-4 shadow-md transition-transform"
 	>
 		{#if selectedRes}
 			<div class="my-auto">
 				<div class="flex items-center">
-					<a href={selectedRes.website} class=" text-sm font-bold capitalize pr-0"
+					<a href={selectedRes.website} class=" text-sm font-['Sniglet'] font-bold capitalize pr-0"
 						>{selectedRes.name}</a
 					>
 					<p class="capitalize text-sm font-['Sniglet']">, {selectedRes.cuisine}</p>
@@ -78,11 +88,12 @@
 						class="object-cover h-[16vh] rounded-lg my-1 w-full"
 					/>
 				</a>
-				<div class="py-1">
+				<div class="py-1 flex gap-7">
 					<a href={selectedRes.website} class=" text-sm font-[Sniglet]">Website</a>
-					<a href={selectedRes.online_ordering} class=" text-sm px-4 font-[Sniglet]">Order Online</a
-					>
 					<a href={selectedRes.menu} class=" text-sm font-[Sniglet]">Menu</a>
+					{#if selectedRes.online_ordering}
+						<a href={selectedRes.online_ordering} class="text-sm font-['Sniglet']">Order Online</a>
+					{/if}
 				</div>
 				<a href="tel:{selectedRes.phone}" class=" text-xs capitalize font-[Sniglet]"
 					>{selectedRes.phone}</a

@@ -38,7 +38,9 @@
   "dependencies": {
     "leaflet": "^1.9.4",
     "lucide-svelte": "^0.460.1",
+    "material-icons": "^1.13.12",
     "svelte-maplibre": "^1.0.0-next.3",
-    "svelte-typewriter": "^3.2.3"
+    "svelte-typewriter": "^3.2.3",
+    "yummy-icons": "^0.1.4"
   }
 }

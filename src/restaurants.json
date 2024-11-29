@@ -2,11 +2,12 @@
   {
     "name": "Garlic and lemons",
     "address": "133 Harvard Avenue Allston, MA 02134",
-    "phone": "(617) 783-8100",
+    "phone": "(617)-783-8100",
     "website": "https://www.garliclemons.com/",
     "menu": "https://www.garliclemons.com/menu",
-    "cuisine": "mediterranian",
-    "method": "third party",
+    "cuisine": "mediterranean",
+    "delivery": "third party",
+    "type": "plate",
     "online_ordering": "https://www.garliclemons.com/order",
     "image_url": "https://static.wixstatic.com/media/048274_394791deeb1a4271b0e285f739540e06~mv2.jpg/v1/fill/w_715,h_405,q_90/048274_394791deeb1a4271b0e285f739540e06~mv2.jpg",
     "latlong": "42.35222660324388, -71.13201860164494"
@@ -14,11 +15,12 @@
   {
     "name": "kimchipapi",
     "address": "81 harvard avenue, allston ma 02134",
-    "phone": "(617) 208-8005",
+    "phone": "(617)-208-8005",
     "website": "https://www.kimchipapi.com/",
     "menu": "https://www.kimchipapi.com/menu",
     "cuisine": "korean",
-    "method": "yes",
+    "delivery": "yes",
+    "type": "korean",
     "online_ordering": "https://www.kimchipapi.com/menu",
     "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/15/9a/a4/98/kimchipapi-bowl-truffle.jpg",
     "latlong": "42.35256229923497, -71.12554570903812"
@@ -26,11 +28,12 @@
   {
     "name": "Isshindo Ramen",
     "address": "1 brighton ave allston ma 02134",
-    "phone": "(617) 987-0201",
+    "phone": "(617)-987-0201",
     "website": "https://www.isshindoramen.com/",
     "menu": "",
     "cuisine": "ramen",
-    "method": "third party",
+    "delivery": "third party",
+    "type": "noodle",
     "online_ordering": "https://www.isshindoramen.com/onlineordering",
     "image_url": "https://static.wixstatic.com/media/b1cbcf_9b75c8b7b9b4473b99ee511b533f4a0a~mv2.jpg/v1/fill/w_1292,h_550,al_c,q_85,enc_avif,quality_auto/b1cbcf_9b75c8b7b9b4473b99ee511b533f4a0a~mv2.jpg",
     "latlong": "42.35285255385461, -71.12553919325114"
@@ -38,11 +41,12 @@
   {
     "name": "Red White Boneless Ramen",
     "address": "294 Newbury Street, Boston, MA 02115",
-    "phone": "(857) 277-0609",
+    "phone": "(857)-277-0609",
     "website": "https://www.redwhiteusa.com/",
     "menu": "https://www.redwhiteusa.com/s/order?location=11ed1e2db06566bdb384ac1f6bbba82c",
     "cuisine": "ramen",
-    "method": "yes",
+    "delivery": "yes",
+    "type": "noodle",
     "online_ordering": "https://www.redwhiteusa.com/s/order?location=11ed1e2db06566bdb384ac1f6bbba82c",
     "image_url": "https://736bb176b2fc7193383d.cdn6.editmysite.com/uploads/b/736bb176b2fc7193383d29acabaf545f17b2668a3ce8263db94af8a3ac4df685/IMG_4671_1711155093.JPG?width=2400&optimize=medium",
     "latlong": "42.34894906822558, -71.08483778532018"
@@ -54,7 +58,8 @@
     "website": "https://japonaise.squarespace.com/",
     "menu": "https://japonaise.squarespace.com/ourmenu",
     "cuisine": "bakery",
-    "method": "no",
+    "delivery": "no",
+    "type": "bakery",
     "online_ordering": "",
     "image_url": "https://images.squarespace-cdn.com/content/v1/582afa0c9de4bb86345f752c/6a7dedb6-0dcc-4c42-a6d0-f0685fda99fe/DSC_6880-2.jpg?format=2500w",
     "latlong": "42.346225159981266, -71.10781873212616"
@@ -66,7 +71,8 @@
     "website": "https://fiyachicken.square.site/",
     "menu": "https://fiyachicken.square.site/",
     "cuisine": "korean",
-    "method": "no",
+    "delivery": "no",
+    "type": "korean",
     "online_ordering": "https://fiyachicken.square.site/",
     "image_url": "https://131953720.cdn6.editmysite.com/uploads/1/3/1/9/131953720/s191321713912687750_p574_i1_w960.jpeg",
     "latlong": "42.3515241933273, -71.12177436441804"
@@ -74,11 +80,12 @@
   {
     "name": "Paris Creperie",
     "address": "278 Harvard St, Brookline, MA",
-    "phone": "(617) 232-1770",
+    "phone": "617-232-1770",
     "website": "https://www.pariscreperie.com/",
     "menu": "https://www.pariscreperie.com/menus",
     "cuisine": "crepes",
-    "method": "no",
+    "delivery": "no",
+    "type": "sweet",
     "online_ordering": "https://order.toasttab.com/online/paris-creperie",
     "image_url": "https://static.wixstatic.com/media/3a3fc4_448eb5eb500f423fb01399d66f8b60d6~mv2.jpg/v1/fill/w_636,h_796,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/81BB8544-ADEF-4829-8F45-F4540E1B6334.jpg",
     "latlong": "42.34252099140653, -71.12199870329029"
@@ -90,7 +97,8 @@
     "website": "https://sipofjoycafe.com/",
     "menu": "https://sipofjoycafe.com/menu",
     "cuisine": "cafe",
-    "method": "no",
+    "delivery": "no",
+    "type": "cafe",
     "online_ordering": "",
     "image_url": "https://cdn10.bostonmagazine.com/wp-content/uploads/sites/2/2023/08/sip-of-joy-elisabeth-hadjis-4-900px.jpg",
     "latlong": "42.3420279314854, -71.07565655910993"
@@ -102,7 +110,8 @@
     "website": "https://www.clearflourbread.com/",
     "menu": "https://www.clearflourbread.com/coffee-bar-menus",
     "cuisine": "bakery",
-    "method": "no",
+    "delivery": "no",
+    "type": "bakery",
     "online_ordering": "",
     "image_url": "https://cdn10.bostonmagazine.com/wp-content/uploads/sites/2/2014/07/food_jesseburke_clear_flour_60245.jpg",
     "latlong": "42.35015345765959, -71.12614343809359"
@@ -114,7 +123,8 @@
     "website": "https://seoultopokkiallston.com/",
     "menu": "https://seoultopokkiallston.com/menu/54473710",
     "cuisine": "korean",
-    "method": "yes",
+    "delivery": "yes",
+    "type": "korean",
     "online_ordering": "https://seoultopokkiallston.com/menu/54473710",
     "image_url": "https://rushable-public.s3.amazonaws.com/Media/69348532/54473710/17968332/99687275/nvwJ4Dssbk7IufLVjZsJF8CQmEZciH9PQysDujiW.jpg",
     "latlong": "42.35155484461815, -71.1314715474703"
@@ -122,11 +132,12 @@
   {
     "name": "boston soup dumplings",
     "address": "113 Brighton Ave,  Boston, MA, 02134",
-    "phone": "(617) 202-3867",
+    "phone": "617-202-3867",
     "website": "https://www.bostonsoupdumplings.com/",
     "menu": "https://www.bostonsoupdumplings.com/menu",
     "cuisine": "chinese",
-    "method": "yes",
+    "delivery": "yes",
+    "type": "dumpling",
     "online_ordering": "https://www.bostonsoupdumplings.com/",
     "image_url": "https://static.wixstatic.com/media/f60687_1eee67d368c547a883d4e7468078f46c~mv2.jpg/v1/fill/w_734,h_685,al_c,q_85,enc_avif,quality_auto/f60687_1eee67d368c547a883d4e7468078f46c~mv2.jpg",
     "latlong": "42.35311840167612, -71.13075116096199"
@@ -134,11 +145,12 @@
   {
     "name": "BAB Korean Bistro",
     "address": "1374 Beacon St, Brookline, MA 02446",
-    "phone": "(617) 383-5575",
+    "phone": "(617)-383-5575",
     "website": "https://babkoreanbistro.com/",
     "menu": "https://babkoreanbistro.com/brookline-bab-korean-bistro-food-menu",
     "cuisine": "korean",
-    "method": "no",
+    "delivery": "no",
+    "type": "korean",
     "online_ordering": "https://order.toasttab.com/online/bab-korean-bistro#!/",
     "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=600,height=400,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/6a77ecfb-dd81-4e29-846d-9e023803b82c.jpg",
     "latlong": "42.34181071171251, -71.12361169969266"
