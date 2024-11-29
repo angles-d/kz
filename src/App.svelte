@@ -10,6 +10,7 @@
 	import Input from '$lib/components/ui/input/input.svelte';
 	import { onMount } from 'svelte';
 	import anime from 'animejs';
+	import JSConfetti from 'js-confetti';
 
 	let showPassword = true;
 	let showIntro = false;
@@ -65,7 +66,6 @@
 			p.y += p.speedY;
 			p.x += p.speedX;
 
-			// Reset particle when it moves out of canvas
 			if (p.y > window.innerHeight) {
 				p.y = anime.random(-50, 0);
 				p.x = anime.random(0, window.innerWidth);
@@ -79,12 +79,10 @@
 		ctx = canvasEl.getContext('2d');
 		setCanvasSize();
 
-		// Create initial particles
 		for (let i = 0; i < numberOfParticles; i++) {
 			particles.push(createParticle());
 		}
 
-		// Animation loop
 		animation = anime({
 			duration: Infinity,
 			update: () => {
@@ -99,75 +97,82 @@
 			window.removeEventListener('resize', setCanvasSize);
 		};
 	});
+
+	const jsConfetti = new JSConfetti();
 </script>
 
-<main class=" {showIntro || showPassword ? 'overflow-hidden h-[100dvh]' : ''} ">
-	{#if showPassword}
-		<div id="password" class="h-[100dvh] flex flex-col justify-center items-center">
-			<canvas bind:this={canvasEl} class="absolute top-0 left-0 -z-10 bg-blue-100"></canvas>
-
-			<form
-				on:submit|preventDefault={() => {
-					if ((password = 'treatyoself')) {
-						showPassword = false;
-						showIntro = true;
-						animation.pause();
-					}
-				}}
-				class="flex z-10"
-			>
-				<Input class="w-9/12 mr-2" placeholder="Enter your password" bind:value={password}></Input>
-				<Button size="icon">
-					<ArrowRight></ArrowRight>
-				</Button>
-			</form>
-		</div>
-	{/if}
-	{#if !showPassword}
-		<div id="intro" class=" h-[100dvh] flex flex-col bg-teal-50">
-			<Typewriter
-				mode={'cascade'}
-				interval={30}
-				delay={500}
-				on:done={() => {
-					showButton = true;
-					showIntro = false;
-				}}
-			>
-				<div class="my-10 mx-8">
-					<h1 class=" capitalize py-4 text-3xl font-semibold">Hello Kexin Zhang!</h1>
-					<p class="whitespace-break-spaces">{' '}</p>
-					<p>
-						I was originally going to get you a gift card for food delivery since you need tasty
-						convenient brain fuel for your art doctor dreams! But all the delivery services are
-						actually so bad for restaurants.
-					</p>
-					<p class="whitespace-break-spaces">{' '}</p>
-					<p>So I made this bc I didn't want support ubereats lol</p>
-					<p class="whitespace-break-spaces">{' '}</p>
-					<p>
-						Turns out your local restaurants do not have their own delivery, so this is more like a
-						general list of places near you but I tried...
-					</p>
-					<p class="whitespace-break-spaces">{' '}</p>
-					<p>Hope you like the restaurants!</p>
-				</div>
-			</Typewriter>
-			<button
-				class="duration-1000 transition-transform self-center mt-auto {showButton
-					? '-translate-y-0'
-					: 'translate-y-full'}"
-				on:click={() => {
-					mainIntoView('resies');
-				}}
-			>
-				<div class="flex flex-col items-center">
-					<p>To the Restaurants</p>
-					<ChevronDown size={64} strokeWidth={1} color="#111"></ChevronDown>
-				</div>
-			</button>
-		</div>
-	{/if}
+<main class=" {showIntro || showPassword ? 'h-[100dvh] overflow-hidden' : ''} ">
+	<div
+		id="password"
+		class="h-[100dvh] absolute top-0 left-0 flex flex-col items-center justify-center z-10 duration-1000 w-screen
+			{showPassword ? 'translate-y-0' : '-translate-y-full'}"
+	>
+		<canvas bind:this={canvasEl} class="absolute left-0 -z-10 bg-blue-100"></canvas>
+		<form
+			on:submit|preventDefault={() => {
+				if (password?.toLowerCase() == 'treatyoself') {
+					showPassword = false;
+					showIntro = true;
+					animation.pause();
+					jsConfetti.addConfetti({
+						emojis: ['🎁', '🎄', '🌟'],
+						confettiNumber: 75
+					});
+				}
+			}}
+			class="flex items-center justify-center w-full"
+		>
+			<Input class="w-7/12 mr-2  ml-auto " placeholder="Enter your password" bind:value={password}
+			></Input>
+			<Button size="icon" class="mr-auto" type="submit">
+				<ArrowRight></ArrowRight>
+			</Button>
+		</form>
+	</div>
+	<div id="intro" class="relative h-[100dvh] flex flex-col bg-teal-50">
+		<Typewriter
+			mode={'cascade'}
+			interval={30}
+			delay={500}
+			disabled={showPassword}
+			on:done={() => {
+				showButton = true;
+				showIntro = false;
+			}}
+		>
+			<div class="my-10 mx-8">
+				<h1 class="capitalize py-4 text-3xl font-semibold">Hello Kexin Zhang!</h1>
+				<p class="py-2">Happy Holidays!!!</p>
+				<p class="py-2">
+					I was originally going to get you a gift card for food delivery since you need tasty
+					convenient brain fuel for your art doctor dreams! But all the delivery services are
+					actually so bad for restaurants.
+				</p>
+				<p class="py-2">So I made this bc I didn't want support ubereats lol</p>
+				<p class="py-2">
+					Turns out your local restaurants do not have their own delivery, so this is more like a
+					general list of places near you but I tried...
+				</p>
+				<p class="py-2">Hope you like the restaurants!</p>
+				<p class="text-xs">
+					p.s. but like also feel free to just buy chipotle or something with the money
+				</p>
+			</div>
+		</Typewriter>
+		<button
+			class="duration-1000 transition-transform self-center mt-auto {showButton
+				? '-translate-y-0'
+				: 'translate-y-full'}"
+			on:click={() => {
+				mainIntoView('resies');
+			}}
+		>
+			<div class="flex flex-col items-center">
+				<p>To the Restaurants</p>
+				<ChevronDown size={64} strokeWidth={1} color="#111"></ChevronDown>
+			</div>
+		</button>
+	</div>
 
 	{#if !showIntro && !showPassword}
 		<div class="inline-flex absolute rounded-md right-1/2 translate-x-1/2 z-10 my-6" role="group">
@@ -198,7 +203,7 @@
 		</div>
 	{/if}
 
-	<div id="resies bg-teal-50">
+	<div id="resies" class="bg-teal-50">
 		{#if showMap}
 			<div id="map">
 				<Map></Map>
