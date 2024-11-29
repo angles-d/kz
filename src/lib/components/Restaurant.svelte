@@ -5,7 +5,7 @@
 	let showDelivery = false;
 </script>
 
-<div class="mb-4 rounded-xl shadow-lg p-4 bg-white border border-black flex flex-col static">
+<div class="mb-4 rounded-xl shadow-lg py-5 px-4 bg-white border border-black flex flex-col static">
 	<div class="flex items-end">
 		<a href={res.website} class="text-sm font-bold capitalize pr-2 font-['Sniglet']"
 			>{res.name},
