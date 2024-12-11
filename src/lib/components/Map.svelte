@@ -7,8 +7,8 @@
 	import { ShellIcon } from 'lucide-svelte';
 	import 'material-icons/iconfont/outlined.css';
 
-	let center = [-71.10781873212616, 42.346225159981266];
-	let home = [-71.1510406295893, 42.35181833496808];
+	let center = [-71.11623808310333, 42.34947224559537];
+	let home = [-71.13600574636236, 42.36108290934698];
 	import restaurants from '../../restaurants.json';
 	let selectedRes = restaurants[0];
 	let show = false;
@@ -21,17 +21,9 @@
 		style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
 		class="pt-2 w-full h-full"
 		standardControls
-		zoom={11.4}
+		zoom={12}
 		{center}
 	>
-		<Marker
-			lngLat={[home[0], home[1]]}
-			onclick={() => {
-				center = home;
-			}}
-			class="grid h-8 w-8 place-items-center rounded-full shadow-2xl border-[1px] border-stone-600 bg-orange-100 "
-			><HouseIcon strokeWidth={1} color="#000"></HouseIcon></Marker
-		>
 		{#each restaurants as res (res.name)}
 			{@const [lat, long] = res.latlong.split(', ').map((x) => parseFloat(x))}
 			<Marker
@@ -61,6 +53,15 @@
 				{/if}
 			</Marker>
 		{/each}
+
+		<Marker
+			lngLat={[home[0], home[1]]}
+			onclick={() => {
+				center = home;
+			}}
+			class="grid size-9 place-items-center rounded-full shadow-2xl border-[1px] border-stone-600 bg-orange-100 "
+			><HouseIcon strokeWidth={1} color="#000"></HouseIcon></Marker
+		>
 	</MapLibre>
 	<div
 		class="w-full absolute text-sm ease-in-out duration-300 border-t border-l border-r border-gray-800 {show

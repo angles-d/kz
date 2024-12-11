@@ -110,7 +110,7 @@
 		<canvas bind:this={canvasEl} class="absolute left-0 -z-10 bg-blue-100"></canvas>
 		<form
 			on:submit|preventDefault={() => {
-				if (password?.toLowerCase() == 'treatyoself') {
+				if (password?.toLowerCase().trim() == 'treatyoself') {
 					showPassword = false;
 					showIntro = true;
 					animation.pause();

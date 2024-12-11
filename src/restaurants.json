@@ -154,5 +154,44 @@
     "online_ordering": "https://order.toasttab.com/online/bab-korean-bistro#!/",
     "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=600,height=400,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/6a77ecfb-dd81-4e29-846d-9e023803b82c.jpg",
     "latlong": "42.34181071171251, -71.12361169969266"
+  },
+  {
+    "name": "Rite Tea & Whisky Bar",
+    "address": "525 Western Ave #6, Brighton, MA 02135",
+    "website": "https://rite-tea-espresso-bar.square.site/",
+    "menu": "https://rite-tea-espresso-bar.square.site/s/order#most-popular",
+    "cuisine": "cafe",
+    "delivery": "no",
+    "type": "cafe",
+    "online_ordering": "https://rite-tea-espresso-bar.square.site/s/order",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4GiH32PWC73oW9s4IJsHexlNN5c-W7loCsPAjbxURP0dYVrjYpBtS9DgkVi7bUyfFCfU&usqp=CAU",
+    "latlong": "42.36179570534239, -71.1448922153413"
+  },
+  {
+    "name": "Sofra Bakery & Cafe",
+    "address": "210 North Harvard St. Boston, MA 02134",
+    "phone": "617-870-7915",
+    "website": "https://www.sofrabakery.com/",
+    "menu": "https://order.toasttab.com/online/sofra-allston",
+    "cuisine": "bakery",
+    "delivery": "no",
+    "type": "bakery",
+    "online_ordering": "https://order.toasttab.com/online/sofra-allston",
+    "image_url": "https://images.squarespace-cdn.com/content/v1/542d8735e4b05b55f138e8e0/1733406673159-XDREMEDOPENVOGKGHMX2/241118-Sofra-food_085_LO.jpg?format=750w",
+    "latlong": "42.36270424836429, -71.13005210349179"
+  }, 
+   {
+    "name": "Black Bird Doughnuts",
+    "address": "100 Holton St bay 4, Brighton, MA 02135",
+    "phone": "617-482-9000",
+    "website": "https://www.blackbirddoughnuts.com/",
+    "menu": "https://www.blackbirddoughnuts.com/doughnuts",
+    "cuisine": "bakery",
+    "delivery": "yes",
+    "type": "bakery",
+    "online_ordering": "https://order.online/store/blackbird-doughnuts-boston-24256448/?hideModal=true&pickup=true",
+    "image_url": "https://static.wixstatic.com/media/e8c9f6_24d00b95258b44bb98630f99eac55bcc~mv2.jpg/v1/fill/w_640,h_452,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e8c9f6_24d00b95258b44bb98630f99eac55bcc~mv2.jpg",
+    "latlong": "42.35917805745819, -71.13771698152816"
   }
+  
 ]
