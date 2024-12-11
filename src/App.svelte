@@ -101,7 +101,7 @@
 	const jsConfetti = new JSConfetti();
 </script>
 
-<main class=" {showIntro || showPassword ? 'h-[100dvh] overflow-hidden' : ''} ">
+<main class=" {showIntro || showPassword ? 'h-[100dvh] overflow-hidden' : 'h-screen'} ">
 	<div
 		id="password"
 		class="h-[100dvh] absolute top-0 left-0 flex flex-col items-center justify-center z-10 duration-1000 w-screen
